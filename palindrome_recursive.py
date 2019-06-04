@@ -15,7 +15,7 @@ def is_palindrome(text, is_clean=False):
         return False
     else:
         text = text[1:-1]
-        return (is_palindrome(text), True)
+        return is_palindrome(text, True)
         
 user_string = input("Type your text here: ")
 is_pal = is_palindrome(user_string)
