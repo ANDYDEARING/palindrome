@@ -1,5 +1,4 @@
 def is_palindrome(text, is_clean=False):
-    is_pal = True
     if not is_clean:
         clean_text = ""
         alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -7,7 +6,13 @@ def is_palindrome(text, is_clean=False):
             if character.lower() in alphabet:
                 clean_text += character.lower()
         text = clean_text
-    return is_pal
+    if len(text) <= 1:
+        return True
+    elif len(text) == 2:
+        return (text[0] == text[-1])
+    else:
+        text = text[1:-1]
+        return (is_palindrome(text), True)
         
 user_string = input("Type your text here: ")
 is_pal = is_palindrome(user_string)
