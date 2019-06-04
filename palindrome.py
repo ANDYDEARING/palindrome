@@ -7,10 +7,6 @@ def is_palindrome(text):
         if character.lower() in alphabet:
             clean_text += character.lower()
 
-    # for test_char in clean_text[0:int(len(clean_text)/2)]:
-    #     if test_char != clean_text[(clean_text.index(test_char)+1)*-1]:
-    #         is_pal = False
-    
     i=0
     while is_pal and i<(len(clean_text)/2):
         if clean_text[i] != clean_text[(i+1)*(-1)]:
