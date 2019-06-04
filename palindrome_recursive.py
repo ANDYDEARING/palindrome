@@ -9,8 +9,6 @@ def is_palindrome(text, is_clean=False):
         text = clean_text
     if len(text) <= 1:
         return True
-    elif len(text) == 2:
-        return (text[0] == text[-1])
     elif text[0] != text[-1]:
         return False
     else:
