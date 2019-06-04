@@ -1,4 +1,5 @@
 def is_palindrome(text, is_clean=False):
+    """Finds whether or not text is a palindrome with recursive logic"""
     if not is_clean:
         clean_text = ""
         alphabet = "abcdefghijklmnopqrstuvwxyz"

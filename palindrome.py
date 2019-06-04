@@ -1,4 +1,5 @@
 def is_palindrome(text):
+    """Finds whether or not text is a palindrome with iterative logic"""
     clean_text = ""
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     is_pal = True
