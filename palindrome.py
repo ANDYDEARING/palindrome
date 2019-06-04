@@ -1,18 +1,20 @@
-def is_palindrome(text):
-    clean_text = ""
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    is_pal = True
-
-    for character in text:
-        if character.lower() in alphabet:
-            clean_text += character.lower()
-
-    i=0
-    while is_pal and i<(len(clean_text)/2):
-        if clean_text[i] != clean_text[(i+1)*(-1)]:
-            is_pal = False
-        i+=1
-    return is_pal
+def is_palindrome(text, is_clean=False):
+    if not is_clean:
+        clean_text = ""
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        for character in text:
+            if character.lower() in alphabet:
+                clean_text += character.lower()
+        text = clean_text
+    if len(text) <= 1:
+        return True
+    elif len(text) == 2:
+        return (text[0] == text[-1])
+    elif text[0] != text[-1]:
+        return False
+    else:
+        text = text[1:-1]
+        return (is_palindrome(text), True)
         
 user_string = input("Type your text here: ")
 is_pal = is_palindrome(user_string)
